@@ -3,80 +3,89 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="NavPageSample.page.TestPage">
 
-    <StackLayout>
+    <ScrollView>
 
-        <Label Text="テスト画面"
+
+        <StackLayout>
+            
+            <Label Text="テスト画面"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-        <Entry x:Name="Birth_Entry"
-    Placeholder="生年月日を入力してください。" />
-        
-        <StackLayout>
-            <RadioButton Content="男性" Checked="RadioButton_Checked"/>
-            <RadioButton Content="女性" Checked="RadioButton_Checked"/>
-            <RadioButton Content="他" Checked="RadioButton_Checked"/>
-            <Entry x:Name="Sex_Entry"/>
-        </StackLayout>
+            <StackLayout>
+                <TimePicker Time="24:00:00"
+                    HorizontalOptions="Center"/>
+                <Label x:Name="Birth_Entry"/>
 
-        <StackLayout>
-            <RadioButton Content="A" Checked="RadioButton_Checked"/>
-            <RadioButton Content="B" Checked="RadioButton_Checked"/>
-            <RadioButton Content="O" Checked="RadioButton_Checked"/>
-            <RadioButton Content="AB" Checked="RadioButton_Checked"/>
-            <Entry x:Name="BloodType_Entry"/>
-        </StackLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <RadioButton Content="男性" />
+                <RadioButton Content="女性" />
+                <RadioButton Content="他" />
+                <Label x:Name="Sex_Entry"/>
+            </StackLayout>
+
+            <StackLayout>
+                <RadioButton Content="A" />
+                <RadioButton Content="B" />
+                <RadioButton Content="O" />
+                <RadioButton Content="AB" />
+                <Label x:Name="BloodType_Entry"/>
+            </StackLayout>
 
 
-        <Entry x:Name="Height_Entry"
+            <Entry x:Name="Height_Entry"
     Placeholder="身長を入力"/>
-        <Entry x:Name="Weight_Entry"
+            <Entry x:Name="Weight_Entry"
     Placeholder="体重を入力"/>
-        
-        <Entry x:Name="Tabako_Entry"
+
+            <Entry x:Name="Tabako_Entry"
     Placeholder="タバコは吸いますか？？"/>
-        <Entry x:Name="Drinking_Entry"
+            <Entry x:Name="Drinking_Entry"
     Placeholder="お酒は飲みますか？？"/>
-        
-        <Entry x:Name="Allegry_Entry"
+
+            <Entry x:Name="Allegry_Entry"
     Placeholder="アレルギー歴"/>
-        <Entry x:Name="Taking_History_Entry"
+            <Entry x:Name="Taking_History_Entry"
     Placeholder="服用歴"/>
-        
-        
-        <Entry x:Name="Day_Breakfast_Entry"
+
+
+            <Entry x:Name="Day_Breakfast_Entry"
     Placeholder="朝食の時間"/>
-        <Entry x:Name="Clockin_Time_Entry"
+            <Entry x:Name="Clockin_Time_Entry"
     Placeholder="出勤する時間"/>
-        <Entry x:Name="Day_lunch_Entry"
+            <Entry x:Name="Day_lunch_Entry"
     Placeholder="昼食の時間"/>
 
-        <Entry x:Name="End_Breakfast_Entry"
+            <Entry x:Name="End_Breakfast_Entry"
     Placeholder="朝食の時間"/>
-        <Entry x:Name="End_Lunch_Entry"
+            <Entry x:Name="End_Lunch_Entry"
     Placeholder="昼食の時間"/>
 
 
-        <Button Text="この情報をアンケートに登録"
+            <Button Text="この情報をアンケートに登録"
     Clicked="OnAddButtonClicked" />
 
-        <ListView x:Name="listview"
+            <ListView x:Name="listview"
      ItemTapped="TappedlistviewItem"
      HasUnevenRows = "True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout>
-                                <Label Text="{Binding }"/>
-                                <Label Text="{Binding Content}"/>
-                                <Label Text="{Binding Date}"/>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label Text="{Binding Tabako_Entry}"/>
+                                    <Label Text="{Binding }"/>
+                                    <Label Text="{Binding }"/>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView >
-    </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView >
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

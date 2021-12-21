@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using App3;
 using Xamarin.Forms;
 using NavPageSample.page;
 
@@ -15,7 +14,7 @@ namespace NavPageSample
         {
             get
             {
-                if (database == null)                                                                                                   //DBƒtƒ@ƒCƒ‹–¼
+                if (database == null)                                                                                                   //DBÆ’tÆ’@Æ’CÆ’â€¹â€“Â¼
                 {
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "R03TEAM04.db"));
                 }
