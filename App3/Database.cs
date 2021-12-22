@@ -19,7 +19,8 @@ namespace NavPageSample
             _database.CreateTableAsync<User>().Wait();
         }
 
-        //USERテーブルからデータを取得し、リストにするメソッド
+        //USERテーブル関連
+        //USERテーブルからデータを取得し、リストを返すメソッド
         public Task<List<User>>GetUsersAsync()
         {   
             return _database.Table<User>().ToListAsync();
@@ -54,5 +55,16 @@ namespace NavPageSample
             return _database.DeleteAsync(user);
         }
 
+        //薬テーブル関連
+        //Medicineテーブルをリストにする
+        public Task<List<Medicine>> GetMedicinesAsync()
+        {
+            return _database.Table<Medicine>().ToListAsync();
+        }
+
+        /*public Task<Medicine> GetMedicineAsync()
+        {
+            return _database.Table<Medicine>().Where()
+        }*/
     }
 }

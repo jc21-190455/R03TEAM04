@@ -12,12 +12,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <StackLayout>
-                <TimePicker Time="24:00:00"
-                    HorizontalOptions="Center"/>
-                <Label x:Name="Birth_Entry"/>
-
-            </StackLayout>
+            <Entry x:Name="Birth_Entry"/>
 
             <StackLayout>
                 <RadioButton Content="男性" />
@@ -33,6 +28,7 @@
                 <RadioButton Content="AB" />
                 <Label x:Name="BloodType_Entry"/>
             </StackLayout>
+
 
 
             <Entry x:Name="Height_Entry"
@@ -66,25 +62,6 @@
 
             <Button Text="この情報をアンケートに登録"
     Clicked="OnAddButtonClicked" />
-
-            <ListView x:Name="listview"
-     ItemTapped="TappedlistviewItem"
-     HasUnevenRows = "True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout>
-                                    <Label Text="{Binding Tabako_Entry}"/>
-                                    <Label Text="{Binding }"/>
-                                    <Label Text="{Binding }"/>
-                                </StackLayout>
-                            </StackLayout>
-
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView >
         </StackLayout>
     </ScrollView>
 

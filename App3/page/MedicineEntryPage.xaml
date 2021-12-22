@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavPageSample.page.MedicineEntryPage">
+    <ContentPage.Content>
+        <ScrollView>
+            
+            <StackLayout>
+                <Label Text="薬の登録"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="Medicine_name"
+                       Placeholder= "登録する薬の名前を入力"/>
+                
+                <StackLayout>
+                    <Label Text="飲む時間帯"/>
+                    <RadioButton Content="朝に服用する"/>
+                    <RadioButton Content="昼に服用する"/>
+                    <RadioButton Content="朝と昼に服用する"/>
+                    <Label x:Name=""/>
+
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="飲むタイミング"/>
+                    <RadioButton Content="食前の時"/>
+                    <RadioButton Content="食後の時"/>
+                    <Label x:Name=""/>
+
+                    <Label Text="生活習慣アンケートをもとに通知します。"/>
+                </StackLayout>
+
+                <Label Text="1回で飲む錠剤の数"/>
+                <Entry x:Name=""
+                       Placeholder="数を入力"/>
+
+                <Label Text="残りの錠剤の数"/>
+                <Entry x:Name=""
+                       Placeholder="数を入力"/>
+
+                <Label Text="注意と副作用"/>
+                <Label Text="ここ？？？？？"/>
+
+                <Label Text="QRコードリーダーを起動"/>
+
+
+                <Button Text="これで薬を登録"
+    Clicked="OnAddButtonClicked" />
+
+
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
