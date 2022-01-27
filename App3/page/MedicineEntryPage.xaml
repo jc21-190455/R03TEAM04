@@ -38,6 +38,28 @@
                 <Label Text="注意と副作用"/>
                 <Label x:Name="Url_Entry"/>
 
+                <StackLayout x:Name="stackLayout">
+                    <Label Text="通知させる"
+           TextColor="Red"
+           HorizontalOptions="Center"            VerticalOptions="Start" />
+
+                    <Button Text="Create Notification"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="OnNotifyButtonClicked" />
+
+                    <Label Text="10秒後に通知させる"
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"/>
+
+                    <Button Text="Create Notification"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="OnScheduleButtonClicked" />
+
+                </StackLayout>
+
                 <Label Text="QRコードリーダーを起動"/>
 
 
