@@ -61,7 +61,7 @@
 
 
             <Button Text="この情報をアンケートに登録"
-    Clicked="OnAddButtonClicked" />
+    Clicked="OnButtonClicked" />
         </StackLayout>
     </ScrollView>
 

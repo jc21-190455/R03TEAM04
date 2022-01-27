@@ -46,7 +46,7 @@
 
 
                 <Button Text="これで薬を登録"
-    Clicked="OnAddButtonClicked" />
+    Clicked="Button_MainClicked" />
 
 
             </StackLayout>

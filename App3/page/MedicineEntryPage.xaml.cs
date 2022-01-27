@@ -15,6 +15,14 @@ namespace NavPageSample.page
         {
             InitializeComponent();
         }
-        
+        private async void Button_MainClicked(object sender, EventArgs e)
+        {
+            String Medicine_name = entry.Text;
+
+            var MainPage1 = new MainPage1();
+            Navigation.PushAs
+        }
+
+
     }
 }
