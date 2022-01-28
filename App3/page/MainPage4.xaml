@@ -9,7 +9,7 @@
             </Frame>
             
             <StackPanel Orientation="Horizontal">
-                <!--ここからいじった  -->
+                <!--ここからいじった 
                     <!-- Create a Calendar that displays 1/10/2009
              through 4/18/2009. -->
   <Calendar Margin="20" 
@@ -44,7 +44,7 @@
       <sys:DateTime>4/2/2009</sys:DateTime>
     </Calendar.SelectedDates>
   </Calendar>
-
+ -->
 </StackPanel>
         </StackLayout>
     </ContentPage.Content>
