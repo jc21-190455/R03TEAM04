@@ -17,6 +17,11 @@ namespace NavPageSample
             _database = new SQLiteAsyncConnection(dbPath);
             //パス.create_tableでUSERテーブルを作るメソッド
             _database.CreateTableAsync<User>().Wait();
+            _database.CreateTableAsync<Medicine>().Wait();
+            _database.CreateTableAsync<Allergie>().Wait();
+            _database.CreateTableAsync<TakeMedicine>().Wait();
+            _database.CreateTableAsync<TakeTime>().Wait();
+        
         }
 
         //USERテーブル関連
