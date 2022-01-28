@@ -9,7 +9,7 @@
             </Frame>
             
             <StackPanel Orientation="Horizontal">
-                <!--ここからいじった -->
+                <!--ここからいじった  -->
                     <!-- Create a Calendar that displays 1/10/2009
              through 4/18/2009. -->
   <Calendar Margin="20" 
