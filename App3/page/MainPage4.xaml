@@ -9,7 +9,7 @@
             </Frame>
             
             <StackPanel Orientation="Horizontal">
-         
+            </StackPanel>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
