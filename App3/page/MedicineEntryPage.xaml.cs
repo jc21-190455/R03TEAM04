@@ -28,9 +28,13 @@ namespace NavPageSample
 
         private async void OnAddButtonClicked(object sender, EventArgs e)
         {
-            
+            //SQLで検索、飲む時間帯が朝か昼か＞薬のタイミングが食前か食後か＞アンケート結果から時間を設定する
 
-            if (!String.IsNullOrWhiteSpace(Medicine_Name_Entry.Text))
+            SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
+            //接続を開く
+            con.Open();
+
+            if (!string.IsNullOrWhiteSpace(Medicine_Name_Entry.Text))
             {
                 await App.Database.SaveMedicineAsync(new Medicine
                 {
@@ -44,6 +48,40 @@ namespace NavPageSample
                     Jikantai = Jikantai_Entry.Text
                 });
             }
+
+            try
+            {
+                //朝か昼か両方なのか
+
+                // データSELECT（Id）
+                string sqlstr = "select Jikantai from User";
+
+                SQLiteCommand com = new SQLiteCommand(sqlstr, con);
+                string jikan = com.ExecuteReader().ToString();
+
+                /*SQLiteParameter param = com.CreateParameter();
+                param.ParameterName = "@A";
+                param.Direction = System.Data.ParameterDirection.Input;
+                param.Value = "朝";
+                com.Parameters.Add(param);*/
+
+
+                //結果を判定
+                if (jikan == "朝")
+                {
+
+                }
+            }
+            catch (SQLiteException ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            
             
         }
 
@@ -72,36 +110,6 @@ namespace NavPageSample
         //ボタン押すと10秒後に通知がくるやつ
         private void OnScheduleButtonClicked(object sender, EventArgs e)
         {
-
-            //SQLで検索、飲む時間帯が朝か昼か＞薬のタイミングが食前か食後か＞アンケート結果から時間を設定する
-
-            SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
-            
-            //接続を開く
-            con.Open();
-            try
-            {
-                //朝か昼か両方なのか
-
-                // データSELECT（Id）
-                string sqlstr = "select Jikantai from User";
-
-                SQLiteCommand com = new SQLiteCommand(sqlstr,con);
-                SQLiteDataReader sdr = com.ExecuteReader();
-
-                /*SQLiteParameter param = com.CreateParameter();
-                param.ParameterName = "@A";
-                param.Direction = System.Data.ParameterDirection.Input;
-                param.Value = "朝";
-                com.Parameters.Add(param);*/
-            }
-            catch(SQLiteException ex)
-            {
-
-            }
-            finally {
-                con.Close();
-            }
 
             notificationNumber++;
             string title = $"Local Notification #{notificationNumber}";
