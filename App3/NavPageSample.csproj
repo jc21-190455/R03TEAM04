@@ -13,20 +13,22 @@
 
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.4.0" />
+		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
 		<PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-		<PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+		<PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.1.0-beta2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="page\gear.png" />
+		<Resource Include="page\gear.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="page\TestPage.xaml.cs">
-	    <DependentUpon>TestPage.xaml</DependentUpon>
-	  </Compile>
+		<Compile Update="page\TestPage.xaml.cs">
+			<DependentUpon>TestPage.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,28 +36,31 @@
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\AlertPage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="page\DetailPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\LifeStylePage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\MainPage2.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\MainPage3.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\MainPage4.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\MedicineEntryPage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\MedicinePage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="page\TestPage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="SetPage2.xaml">
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
