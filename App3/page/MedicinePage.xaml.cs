@@ -16,5 +16,5 @@ namespace NavPageSample.page
         {
             InitializeComponent();
         }
-
     }
+}
