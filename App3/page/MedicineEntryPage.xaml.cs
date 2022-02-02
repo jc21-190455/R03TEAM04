@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using NavPageSample.notification;
-using SQLite;
+using System.Data.SQLite;
 
 namespace NavPageSample
 {
@@ -41,7 +41,7 @@ namespace NavPageSample
 
                 await App.Database.SaveUserAsync(new User
                 {
-                    jikantai = Jikantai_Entry.Text
+                    Jikantai = Jikantai_Entry.Text
                 });
             }
             
@@ -72,35 +72,38 @@ namespace NavPageSample
         //ボタン押すと10秒後に通知がくるやつ
         private void OnScheduleButtonClicked(object sender, EventArgs e)
         {
-            using (var connection = new SQLiteConnection("R03TEAM04.db"))
-            {
-                // テーブルの作成(あればスキップ)
-                connection.CreateTable<User>();
 
-                // データ数が0件の場合
-                if (connection.Table<User>().Count() == 0)
-                {
-                    // データINSERT
-                    connection.Insert(new User("taro", 42));
-                    connection.Insert(new User("jiro", 23));
-                    connection.Insert(new User("hanako", 31));
-                }
+            //SQLで検索、飲む時間帯が朝か昼か＞薬のタイミングが食前か食後か＞アンケート結果から時間を設定する
+
+            SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
+            
+            //接続を開く
+            con.Open();
+            try
+            {
+                //朝か昼か両方なのか
 
                 // データSELECT（Id）
-                var userList = connection.Query<User>("SELECT * FROM User WHERE Day_breakfast = ?", 3);
-                foreach (User user in userList)
-                {
-                    Console.WriteLine("Id:{0}, Name:{1}, Age:{2}", user.Id, user.Name, user.Age);
-                }
+                string sqlstr = "select Jikantai from User";
 
-                // データSELECT（LIKe）
-                userList = connection.Query<User>("SELECT * FROM User WHERE Name LIKE '%a%'");
-                foreach (User user in userList)
-                {
-                    Console.WriteLine("Id:{0}, Name:{1}, Age:{2}", user.Id, user.Name, user.Age);
-                }
+                SQLiteCommand com = new SQLiteCommand(sqlstr,con);
+                SQLiteDataReader sdr = com.ExecuteReader();
 
-                notificationNumber++;
+                /*SQLiteParameter param = com.CreateParameter();
+                param.ParameterName = "@A";
+                param.Direction = System.Data.ParameterDirection.Input;
+                param.Value = "朝";
+                com.Parameters.Add(param);*/
+            }
+            catch(SQLiteException ex)
+            {
+
+            }
+            finally {
+                con.Close();
+            }
+
+            notificationNumber++;
             string title = $"Local Notification #{notificationNumber}";
             string message = $"You have now received {notificationNumber} notifications!";
             notificationManager.SendNotification(title, message, DateTime.Parse()/*Now.AddSeconds(10))*/;

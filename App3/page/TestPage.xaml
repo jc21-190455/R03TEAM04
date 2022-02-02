@@ -81,19 +81,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout>
-                                    <Label Text="{Binding Date_of_birth}"/>
-                                    <Label Text="{Binding Sex}"/>
-                                    <Label Text="{Binding BoodType}"/>
-                                    <Label Text="{Binding Height}"/>
-                                    <Label Text="{Binding Weight}"/>
-                                    <Label Text="{Binding Tabako}"/>
-                                    <Label Text="{Binding Drinking}"/>
-                                    <Label Text="{Binding Taking_history}"/>
-                                    <Label Text="{Binding Day_breakfast}"/>
-                                    <Label Text="{Binding Clockin_time}"/>
-                                    <Label Text="{Binding Day_lunch}"/>
-                                    <Label Text="{Binding End_breakfast}"/>
-                                    <Label Text="{Binding End_lunch}"/>
+                                    <Label Text="{Binding Day_Breakfast_Entry}"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

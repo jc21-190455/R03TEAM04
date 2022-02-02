@@ -59,7 +59,7 @@ namespace NavPageSample
         public string End_breakfast { get; set; }
         [NotNull]
         public string End_lunch { get; set; }
-        public string jikantai { get; set; }
+        public string Jikantai { get; set; }
 
 
     }
