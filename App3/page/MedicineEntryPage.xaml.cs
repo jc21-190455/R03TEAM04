@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NavPageSample.page
+namespace NavPageSample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MedicineEntryPage : ContentPage
@@ -15,12 +15,26 @@ namespace NavPageSample.page
         {
             InitializeComponent();
         }
-        private async void Button_MainClicked(object sender, EventArgs e)
-        {
-            String Medicine_name = entry.Text;
 
-            var MainPage1 = new MainPage1();
-            Navigation.PushAs
+        private async void OnAddButtonClicked(object sender, EventArgs e)
+        {
+
+
+            if (!String.IsNullOrWhiteSpace(Medicine_Name_Entry.Text))
+            {
+                await App.Database.SaveMedicineAsync(new Medicine
+                {
+                    Medicine_name = Medicine_Name_Entry.Text,
+                    Url = Url_Entry.Text,
+                    timing = Timing_Entry.Text,
+                });
+
+                await App.Database.SaveUserAsync(new User
+                {
+                    jikantai = Jikantai_Entry.Text
+                });
+            }
+
         }
 
 
