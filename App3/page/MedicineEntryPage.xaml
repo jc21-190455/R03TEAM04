@@ -4,7 +4,7 @@
              x:Class="NavPageSample.MedicineEntryPage">
     <ContentPage.Content>
         <ScrollView>
-            
+
             <StackLayout>
                 <Label Text="薬の登録"
                 VerticalOptions="CenterAndExpand" 
@@ -12,7 +12,7 @@
 
                 <Entry x:Name="Medicine_Name_Entry"
                        Placeholder= "登録する薬の名前を入力"/>
-                
+
                 <StackLayout>
                     <Label Text="飲む時間帯"/>
                     <RadioButton Content="朝に服用する"/>
@@ -45,8 +45,8 @@
                         Clicked="OnAddButtonClicked"/>
 
             </StackLayout>
-            
+
         </ScrollView>
-        
+
     </ContentPage.Content>
 </ContentPage>
