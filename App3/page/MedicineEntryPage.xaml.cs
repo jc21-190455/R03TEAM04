@@ -50,6 +50,37 @@ namespace NavPageSample
                 });
             }
 
+        }
+
+        // 2021/12/28 吉澤追加分 ここから
+
+        INotificationManager notificationManager;
+
+        int notificationNumber = 0;
+
+
+        //ボタン押すと即時通知されるやつ
+        private void OnNotifyButtonClicked(object sender, EventArgs e)
+        {
+            notificationNumber++;
+            string title = $"Local Notification #{notificationNumber}";
+            string message = $"You have now received {notificationNumber} notifications!";
+            notificationManager.SendNotification(title, message);
+            var msg = new Label()
+            {
+                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
+            };
+            stackLayout.Children.Add(msg);
+
+        }
+
+        //ボタン押すと10秒後に通知がくるやつ
+        private void OnScheduleButtonClicked(object sender, EventArgs e)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
+            //接続を開く
+            con.Open();
+
             try
             {
                 //食後か食前か
@@ -84,40 +115,10 @@ namespace NavPageSample
                 con.Close();
             }
 
-
-
-        }
-
-        // 2021/12/28 吉澤追加分 ここから
-
-        INotificationManager notificationManager;
-
-        int notificationNumber = 0;
-
-
-        //ボタン押すと即時通知されるやつ
-        private void OnNotifyButtonClicked(object sender, EventArgs e)
-        {
             notificationNumber++;
             string title = $"Local Notification #{notificationNumber}";
             string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message);
-            var msg = new Label()
-            {
-                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
-            };
-            stackLayout.Children.Add(msg);
-
-        }
-
-        //ボタン押すと10秒後に通知がくるやつ
-        private void OnScheduleButtonClicked(object sender, EventArgs e)
-        {
-
-            notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message, DateTime.Parse(Jikantai_Entry.Text)); //*Now.AddSeconds(10));
+            notificationManager.SendNotification(title, message, DateTime.Parse(ji)); //*Now.AddSeconds(10));
             var msg = new Label()
             {
                 Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
