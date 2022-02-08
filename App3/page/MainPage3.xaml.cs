@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -24,16 +25,15 @@ namespace NavPageSample.page
             InitializeComponent();
              BindingContext = this;
     }
-        SearchBar searchBar = new SearchBar
-        {
-            Placeholder = "Search items...",
-            PlaceholderColor = Color.Black,
-            TextColor = Color.Black,
-            TextTransform = TextTransform.Lowercase,
-            HorizontalTextAlignment = TextAlignment.Center,
-            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
-            FontAttributes = FontAttributes.Italic
-        };
+
+      
+
+
+
+
+
+
+      
         private async void Button4_Clicked(object sender, EventArgs e)
         {
 
