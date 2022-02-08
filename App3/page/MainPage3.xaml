@@ -7,6 +7,16 @@
             <Frame BackgroundColor="#000000" Padding="24" CornerRadius="0">
                 <Label Text="薬の登録" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
+
+            <SearchBar Placeholder="薬のキーワードを検索"
+CancelButtonColor="Black"
+PlaceholderColor="DarkGray"
+TextColor="Black"
+TextTransform="Lowercase"
+HorizontalTextAlignment="Center"
+FontSize="Medium"
+FontAttributes="Italic" />
+
             <Button Text="QRリーダーを起動" Clicked="Button4_Clicked" x:Name="msg" />
 
           
