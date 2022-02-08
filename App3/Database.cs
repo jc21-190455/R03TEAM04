@@ -72,7 +72,6 @@ namespace NavPageSample
             return _database.Table<Medicine>().Where(i => i.Medicine_id == id).FirstOrDefaultAsync();
         }
 
-        //Medicineテーブルを保存とアプデ
         public Task<int> SaveMedicineAsync(Medicine medicine)
         {
             if(medicine.Medicine_id != 0)

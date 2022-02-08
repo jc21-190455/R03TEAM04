@@ -28,7 +28,8 @@ namespace NavPageSample
 
         private async void OnAddButtonClicked(object sender, EventArgs e)
         {
-            //SQLで検索、飲む時間帯が朝か昼か＞薬のタイミングが食前か食後か＞アンケート結果から時間を設定する
+            //入力してもらい、それをDBに登録後、SQLで通知に使う朝食の時間などを取り出す
+            //食前食後かで加算減算をする。その結果を通知を送るメソッドのとこに入れたい
 
             SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
             //接続を開く
@@ -51,6 +52,8 @@ namespace NavPageSample
 
             try
             {
+                //食後か食前か
+
                 //朝か昼か両方なのか
 
                 // データSELECT（Id）
@@ -59,11 +62,11 @@ namespace NavPageSample
                 SQLiteCommand com = new SQLiteCommand(sqlstr, con);
                 string jikan = com.ExecuteReader().ToString();
 
-                /*SQLiteParameter param = com.CreateParameter();
+                SQLiteParameter param = com.CreateParameter();
                 param.ParameterName = "@A";
                 param.Direction = System.Data.ParameterDirection.Input;
                 param.Value = "朝";
-                com.Parameters.Add(param);*/
+                com.Parameters.Add(param);
 
 
                 //結果を判定
@@ -81,8 +84,8 @@ namespace NavPageSample
                 con.Close();
             }
 
-            
-            
+
+
         }
 
         // 2021/12/28 吉澤追加分 ここから
@@ -114,7 +117,7 @@ namespace NavPageSample
             notificationNumber++;
             string title = $"Local Notification #{notificationNumber}";
             string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message, DateTime.Parse()/*Now.AddSeconds(10))*/;
+            notificationManager.SendNotification(title, message, DateTime.Parse(Jikantai_Entry.Text)); //*Now.AddSeconds(10));
             var msg = new Label()
             {
                 Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
@@ -132,6 +135,11 @@ namespace NavPageSample
                 };
                 stackLayout.Children.Add(msg);
             });
+        }
+
+        public class Timing_Z
+        {
+            string sqlstr = "select timing from Medicine";
         }
 
         // 2021/12/28 吉澤追加分 ここまで
