@@ -58,7 +58,7 @@
 
 
 
-            <Entry x:Name="Height_Entry"
+            <Entry WidthRequest="500" x:Name="Height_Entry"
     Placeholder="身長を入力"/>
             <Entry x:Name="Weight_Entry"
     Placeholder="体重を入力"/>
