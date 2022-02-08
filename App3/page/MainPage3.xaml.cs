@@ -51,6 +51,10 @@ namespace NavPageSample.page
                     TextType = TextType.Html
                 };
             }
+
+            if (TapCommand == null) {
+                msg.Text = "QRを読み込んでください";
+            }
           
  
     }
