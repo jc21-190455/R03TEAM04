@@ -52,9 +52,7 @@ namespace NavPageSample.page
                 };
             }
 
-            if (TapCommand == null) {
-                msg.Text = "QRを読み込んでください";
-            }
+      
           
  
     }
