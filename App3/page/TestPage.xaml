@@ -59,16 +59,6 @@
             </StackLayout>
 
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
 
                 <Entry x:Name="Height_Entry"
     Placeholder="身長を入力"/>
@@ -135,7 +125,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView >
-            </Grid>
+            
         </StackLayout>
     </ScrollView>
 
