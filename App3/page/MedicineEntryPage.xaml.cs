@@ -34,9 +34,6 @@ namespace NavPageSample
             SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
             //接続を開く
             con.Open();
-
-            if (!string.IsNullOrWhiteSpace(Medicine_Name_Entry.Text))
-            {
                 await App.Database.SaveMedicineAsync(new Medicine
                 {
                     Medicine_name = Medicine_Name_Entry.Text,
@@ -44,13 +41,23 @@ namespace NavPageSample
                     timing = Timing_Entry.Text,
                 });
 
-                await App.Database.SaveUserAsync(new User
-                {
-                    Jikantai = Jikantai_Entry.Text
-                });
+            // データSELECT（）
+            string sqlstr = "select Jikantai from User";
+
+            SQLiteCommand com = new SQLiteCommand(sqlstr, con);
+            string result = com.ExecuteReader().ToString();
+
+
+            if (Timing_Entry.ToString() =="食前")
+            {
+                //食前なら、Userテーブルの朝飯、昼の時間から30分引く
+            }
+            else //食後
+            {
+                //食後なら＋３０分
             }
 
-        }
+            }
 
         // 2021/12/28 吉澤追加分 ここから
 
@@ -58,21 +65,6 @@ namespace NavPageSample
 
         int notificationNumber = 0;
 
-
-        //ボタン押すと即時通知されるやつ
-        private void OnNotifyButtonClicked(object sender, EventArgs e)
-        {
-            notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message);
-            var msg = new Label()
-            {
-                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
-            };
-            stackLayout.Children.Add(msg);
-
-        }
 
         //ボタン押すと10秒後に通知がくるやつ
         private void OnScheduleButtonClicked(object sender, EventArgs e)
@@ -83,28 +75,20 @@ namespace NavPageSample
 
             try
             {
-                //食後か食前か
 
-                //朝か昼か両方なのか
-
-                // データSELECT（Id）
+                // データSELECT（）
                 string sqlstr = "select Jikantai from User";
 
                 SQLiteCommand com = new SQLiteCommand(sqlstr, con);
-                string jikan = com.ExecuteReader().ToString();
-
-                SQLiteParameter param = com.CreateParameter();
-                param.ParameterName = "@A";
-                param.Direction = System.Data.ParameterDirection.Input;
-                param.Value = "朝";
-                com.Parameters.Add(param);
+                string result = com.ExecuteReader().ToString();
 
 
-                //結果を判定
-                if (jikan == "朝")
-                {
 
-                }
+                //SELECT（timing）
+                string sqltiming = "select timing from Medicine";
+                SQLiteCommand com = new SQLiteCommand(sqltiming, con);
+                string result = com.ExecuteReader().ToString();
+
             }
             catch (SQLiteException ex)
             {
@@ -116,9 +100,9 @@ namespace NavPageSample
             }
 
             notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message, DateTime.Parse(ji)); //*Now.AddSeconds(10));
+            string title = $"通知しますた。 #{notificationNumber}";
+            string message = $" どうする {notificationNumber} 222222!";
+            notificationManager.SendNotification(title, message, DateTime.TryParse(User.)); //*Now.AddSeconds(10));
             var msg = new Label()
             {
                 Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
@@ -138,12 +122,42 @@ namespace NavPageSample
             });
         }
 
-        public class Timing_Z
+        public class AsaOrHiru
         {
-            string sqlstr = "select timing from Medicine";
+            
         }
 
         // 2021/12/28 吉澤追加分 ここまで
 
     }
 }
+
+/*
+
+        //ボタン押すと即時通知されるやつ
+        private void OnNotifyButtonClicked(object sender, EventArgs e)
+        {
+            notificationNumber++;
+            string title = $"Local Notification #{notificationNumber}";
+            string message = $"You have now received {notificationNumber} notifications!";
+            notificationManager.SendNotification(title, message);
+            var msg = new Label()
+            {
+                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
+            };
+            stackLayout.Children.Add(msg);
+
+        }*/
+
+/*SQLiteParameter param = com.CreateParameter();
+                param.ParameterName = "@A";
+                param.Direction = System.Data.ParameterDirection.Input;
+                param.Value = "朝";
+                com.Parameters.Add(param);
+
+
+                //結果を判定
+                if (jikan == "朝")
+                {
+
+                }*/
