@@ -43,36 +43,11 @@ namespace NavPageSample.page
 
                 ZXing.Result result = await scanner.Scan();
             
-            Match matchedObject = Regex.Match(result.Text, (@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?"));
-            if (matchedObject.Success)
-            {
-                var country = matchedObject.Groups[1].Value;
-                msg.Text = country;
-
-                Label label = new Label
-                {
-                    Text = result.Text,
-                    TextType = TextType.Html
-                };
+            
 
 
 
-            }
-                else if (matchedObject.Success == false)
-                {
-                var country1 = matchedObject.Groups[1].Value;
-                msg.Text = country1;
-
-                Label label = new Label
-                {
-                    Text = "URLではありません",
-                    TextType = TextType.Html
-                };
-            }
-
-
-
-          /*  if (result != null)
+            if (result != null)
             {   
 
                 msg.Text = result.Text;
@@ -82,7 +57,7 @@ namespace NavPageSample.page
                     Text = result.Text,
                     TextType = TextType.Html
                 };
-            }*/
+            }
 
       
           
