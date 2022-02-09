@@ -24,6 +24,11 @@ namespace NavPageSample.page
         {
             InitializeComponent();
              BindingContext = this;
+
+            if (aaa.Text == "サイトへ移動") {
+                Navigation.PushAsync(new MainPage3());
+
+            }
     }
 
       
