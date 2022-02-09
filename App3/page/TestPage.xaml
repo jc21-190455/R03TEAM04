@@ -7,6 +7,8 @@
 
 
         <StackLayout>
+            
+            
 
             <Label Text="テスト画面"
                 VerticalOptions="CenterAndExpand" 
@@ -37,7 +39,7 @@
             <StackLayout x:Name="stackLayout">
                 <Label Text="Click the button below to create a local notification."
            TextColor="Red"
-           HorizontalOptions="Center"            VerticalOptions="Start" />
+           HorizontalOptions="Center"  VerticalOptions="Start" />
 
                 <Button Text="Create Notification"
             HorizontalOptions="Center"
@@ -58,7 +60,7 @@
 
 
 
-            <Entry  x:Name="Height_Entry"
+            <Entry x:Name="Height_Entry"
     Placeholder="身長を入力"/>
             <Entry x:Name="Weight_Entry"
     Placeholder="体重を入力"/>

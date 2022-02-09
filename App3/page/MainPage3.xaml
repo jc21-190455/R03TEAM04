@@ -20,8 +20,7 @@
                         <Span Text="QRを読み込んでからクリックお願いします ⇒" />
                         <Span Text="サイトへ移動"   
                   TextColor="Blue"
-                  TextDecorations="Underline"
-                              x:Name="aaa">
+                  TextDecorations="Underline">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding TapCommand}"
                                           CommandParameter="{Binding Source={x:Reference msg},Path=Text}"/>
