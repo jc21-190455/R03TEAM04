@@ -20,7 +20,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="QRを読み込んでからクリックお願いします ⇒" />
-                        <Span Text="サイトへ移動"   
+                        <Span Text="表示"   
                   TextColor="Blue"
                   TextDecorations="Underline">
                             <Span.GestureRecognizers>
