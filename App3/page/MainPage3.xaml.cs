@@ -20,13 +20,13 @@ namespace NavPageSample.page
         private async void Button4_Clicked(object sender, EventArgs e)
         {
 
-                ZXing.Mobile.MobileBarcodeScanner scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            ZXing.Mobile.MobileBarcodeScanner scanner = new ZXing.Mobile.MobileBarcodeScanner();
 
-                ZXing.Result result = await scanner.Scan();
+            ZXing.Result result = await scanner.Scan();
 
-                if (result != null)
-                    msg.Text = "Scanned Barcode: " + result.Text;
-            
+            if (result != null)
+                msg.Text = "Scanned Barcode: " + result.Text;
+
         }
     }
 }

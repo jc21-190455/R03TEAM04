@@ -7,7 +7,7 @@
             <Frame BackgroundColor="#000000" Padding="24" CornerRadius="0">
                 <Label Text="服用履歴" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            
+
             <StackPanel Orientation="Horizontal">
             </StackPanel>
         </StackLayout>

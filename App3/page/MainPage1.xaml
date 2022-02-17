@@ -11,7 +11,7 @@
                      />
 
 
-            
+
             <Label Text="朝" FontSize="Title" Padding="60,10,60,10"/>
             <Label x:Name="label"></Label>
             <Label Text="昼" FontSize="Title" Padding="60,10,30,10"/>

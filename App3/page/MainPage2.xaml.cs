@@ -1,35 +1,21 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace NavPageSample
-{
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage2 : ContentPage
-    {
-        public MainPage2()
-        {
-            InitializeComponent();
-        }
-
-        private void Button2_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AlertPage());
-
-        }
-
-        private void Button3_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new LifeStylePage());
-
-        }
-
+﻿<? xml version = "1.0" encoding = "utf-8" ?>
+   < ContentPage xmlns = "http://xamarin.com/schemas/2014/forms"
+             xmlns: x = "http://schemas.microsoft.com/winfx/2009/xaml"
+             x: Class = "NavPageSample.page.MainPage3" >
+ 
+     < ContentPage.Content >
+ 
+         < StackLayout >
+ 
+             < Frame BackgroundColor = "#000000" Padding = "24" CornerRadius = "0" >
       
-    }
-}
+                      < Label Text = "薬の登録" HorizontalTextAlignment = "Center" TextColor = "White" FontSize = "36" />
+             
+                         </ Frame >
+             
+                         < Button Text = "QRリーダーを起動" Clicked = "Button4_Clicked" x: Name = "msg" />
+                   
+                           </ StackLayout >
+                   
+                       </ ContentPage.Content >
+                   </ ContentPage >
