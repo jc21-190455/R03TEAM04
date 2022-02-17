@@ -50,6 +50,7 @@ namespace NavPageSample
                 });
             }
 
+
         }
 
         // 2021/12/28 吉澤追加分 ここから
@@ -59,66 +60,57 @@ namespace NavPageSample
         int notificationNumber = 0;
 
 
-        //ボタン押すと即時通知されるやつ
-        private void OnNotifyButtonClicked(object sender, EventArgs e)
+       
+        //ボタン押すと10秒後に通知がくるやつ
+        private void oneButtonClicked(object sender, EventArgs e)
         {
+
             notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message);
+            string title = $"通知しますた #{notificationNumber}";
+            string message = $"お薬飲もう {notificationNumber} ね!";
+            notificationManager.SendNotification(title, message, DateTime.Now.AddMinutes(1));
             var msg = new Label()
             {
-                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
+                Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
             };
             stackLayout.Children.Add(msg);
-
         }
 
-        //ボタン押すと10秒後に通知がくるやつ
-        private void OnScheduleButtonClicked(object sender, EventArgs e)
+        private void twoButtonClicked(object sender, EventArgs e)
         {
-            SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
-            //接続を開く
-            con.Open();
-
-            try
-            {
-                //食後か食前か
-
-                //朝か昼か両方なのか
-
-                // データSELECT（Id）
-                string sqlstr = "select Jikantai from User";
-
-                SQLiteCommand com = new SQLiteCommand(sqlstr, con);
-                string jikan = com.ExecuteReader().ToString();
-
-                SQLiteParameter param = com.CreateParameter();
-                param.ParameterName = "@A";
-                param.Direction = System.Data.ParameterDirection.Input;
-                param.Value = "朝";
-                com.Parameters.Add(param);
-
-
-                //結果を判定
-                if (jikan == "朝")
-                {
-
-                }
-            }
-            catch (SQLiteException ex)
-            {
-
-            }
-            finally
-            {
-                con.Close();
-            }
 
             notificationNumber++;
-            string title = $"Local Notification #{notificationNumber}";
-            string message = $"You have now received {notificationNumber} notifications!";
-            notificationManager.SendNotification(title, message, DateTime.Parse(ji)); //*Now.AddSeconds(10));
+            string title = $"通知しますた #{notificationNumber}";
+            string message = $"お薬飲もう {notificationNumber} ね!";
+            notificationManager.SendNotification(title, message, DateTime.Now.AddMinutes(2));
+            var msg = new Label()
+            {
+                Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
+            };
+            stackLayout.Children.Add(msg);
+        }
+
+        private void threeeButtonClicked(object sender, EventArgs e)
+        {
+
+            notificationNumber++;
+            string title = $"通知しますた #{notificationNumber}";
+            string message = $"お薬飲もう {notificationNumber} ね!";
+            notificationManager.SendNotification(title, message, DateTime.Now.AddMinutes(3));
+            var msg = new Label()
+            {
+                Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
+            };
+            stackLayout.Children.Add(msg);
+        }
+
+        private void fourButtonClicked(object sender, EventArgs e)
+        {
+
+            notificationNumber++;
+            string title = $"通知しますた #{notificationNumber}";
+            string message = $"お薬飲もう {notificationNumber} ね!";
+            notificationManager.SendNotification(title, message, DateTime.Now.AddMinutes(4));
             var msg = new Label()
             {
                 Text = $"Schedule Notification send:\nTitle: {title}\nMessage: {message}"
@@ -138,12 +130,23 @@ namespace NavPageSample
             });
         }
 
-        public class Timing_Z
-        {
-            string sqlstr = "select timing from Medicine";
-        }
-
         // 2021/12/28 吉澤追加分 ここまで
 
     }
 }
+
+/* //ボタン押すと即時通知されるやつ
+        private void OnNotifyButtonClicked(object sender, EventArgs e)
+        {
+            notificationNumber++;
+            string title = $"Local Notification #{notificationNumber}";
+            string message = $"You have now received {notificationNumber} notifications!";
+            notificationManager.SendNotification(title, message);
+            var msg = new Label()
+            {
+                Text = $"Notification send:\nTitle: {title}\nMessage: {message}"
+            };
+            stackLayout.Children.Add(msg);
+
+        }
+*/

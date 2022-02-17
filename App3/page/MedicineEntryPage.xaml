@@ -39,24 +39,48 @@
                 <Label x:Name="Url_Entry"/>
 
                 <StackLayout x:Name="stackLayout">
-                    <Label Text="通知させる"
-           TextColor="Red"
-           HorizontalOptions="Center"            VerticalOptions="Start" />
+                    
 
-                    <Button Text="Create Notification"
-            HorizontalOptions="Center"
-            VerticalOptions="Start"
-            Clicked="OnNotifyButtonClicked" />
-
-                    <Label Text="10秒後に通知させる"
+                    <Label Text="1min後に通知させる"
            TextColor="Red"
            HorizontalOptions="Center"
            VerticalOptions="Start"/>
 
-                    <Button Text="Create Notification"
+                    <Button Text="通知を送信"
             HorizontalOptions="Center"
             VerticalOptions="Start"
-            Clicked="OnScheduleButtonClicked" />
+            Clicked="oneButtonClicked" />
+                    
+
+                    <Label Text="2min後に通知させる"
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"/>
+
+                    <Button Text="通知を送信"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="twoButtonClicked" />
+
+                    <Label Text="3min後に通知させる"
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"/>
+
+                    <Button Text="通知を送信"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="threeeButtonClicked" />
+
+                    <Label Text="4min後に通知させる"
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"/>
+
+                    <Button Text="通知を送信"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="fourButtonClicked" />
 
                 </StackLayout>
 
