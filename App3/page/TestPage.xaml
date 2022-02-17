@@ -7,7 +7,7 @@
 
 
         <StackLayout>
-            
+
             <Label Text="テスト画面"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

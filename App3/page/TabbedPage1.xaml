@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         xmlns:local="clr-namespace:NavPageSample" xmlns:local1="clr-namespace:NavPageSample.page"
             x:Class="NavPageSample.TabbedPage1">
-  <!--Pages can be added as references or inline-->
-     
-    
+    <!--Pages can be added as references or inline-->
+
+
     <NavigationPage Title="ホーム" >
         <x:Arguments>
             <local:MainPage1/>
         </x:Arguments>
-        
+
     </NavigationPage>
 
     <local1:MainPage3 Title="薬の登録"></local1:MainPage3>
