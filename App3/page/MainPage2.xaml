@@ -16,7 +16,7 @@
                 <Button ContentLayout="Bottom,0" Image="lifeicon1" HorizontalOptions="Start" Clicked="Button3_Clicked"  />
                 <Button Text="生活習慣     >"  FontSize="30" Clicked="Button3_Clicked" VerticalOptions="Center" />
                   </StackLayout>
-000
+
           
              </StackLayout>
     </ContentPage.Content>
