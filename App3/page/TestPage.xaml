@@ -8,6 +8,8 @@
 
         <StackLayout>
             
+            
+
             <Label Text="テスト画面"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
@@ -37,18 +39,18 @@
             <StackLayout x:Name="stackLayout">
                 <Label Text="Click the button below to create a local notification."
            TextColor="Red"
-           HorizontalOptions="Center"            VerticalOptions="Start" />
+           HorizontalOptions="Center"  VerticalOptions="Start" />
 
                 <Button Text="Create Notification"
             HorizontalOptions="Center"
             VerticalOptions="Start"
             Clicked="OnNotifyButtonClicked" />
-                
+
                 <Label Text="Click the button below to schedule a local notification for in 10 seconds time."
            TextColor="Red"
            HorizontalOptions="Center"
            VerticalOptions="Start"/>
-                
+
                 <Button Text="Create Notification"
             HorizontalOptions="Center"
             VerticalOptions="Start"
@@ -58,7 +60,7 @@
 
 
 
-            <Entry x:Name="Height_Entry"
+                <Entry x:Name="Height_Entry"
     Placeholder="身長を入力"/>
             <Entry x:Name="Weight_Entry"
     Placeholder="体重を入力"/>
@@ -80,15 +82,15 @@
             <TimePicker x:Name="Clockin_Time_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="Day_lunch_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="End_Breakfast_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="End_Lunch_Entry"
                     Time="12:00:00"
                     Format="t"/>
@@ -123,6 +125,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView >
+            
         </StackLayout>
     </ScrollView>
 
