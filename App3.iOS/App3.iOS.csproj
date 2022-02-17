@@ -224,6 +224,7 @@
     <BundleResource Include="Resources\tuuchi3.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\kusuri.png" />
     <Content Include="Resources\lifeicon1.png" />
     <BundleResource Include="Resources\test.png" />
   </ItemGroup>

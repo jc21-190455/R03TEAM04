@@ -25,7 +25,8 @@ namespace NavPageSample
         }
 
         public void NameSet(string name) {
-            label.Text = name;
+            label1.Text = name;
+            label2.Text = name;
 
 
         }

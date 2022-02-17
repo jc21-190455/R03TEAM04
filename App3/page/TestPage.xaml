@@ -8,6 +8,8 @@
 
         <StackLayout>
             
+            
+
             <Label Text="テスト画面"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
@@ -32,10 +34,9 @@
                 <RadioButton Content="O" />
                 <RadioButton Content="AB" />
                 <Label x:Name="BloodType_Entry"/>
-            </StackLayout>
+          </StackLayout>
 
-
-            <Entry x:Name="Height_Entry"
+                <Entry x:Name="Height_Entry"
     Placeholder="身長を入力"/>
             <Entry x:Name="Weight_Entry"
     Placeholder="体重を入力"/>
@@ -57,15 +58,15 @@
             <TimePicker x:Name="Clockin_Time_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="Day_lunch_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="End_Breakfast_Entry"
                     Time="12:00:00"
                     Format="t"/>
-            
+
             <TimePicker x:Name="End_Lunch_Entry"
                     Time="12:00:00"
                     Format="t"/>
@@ -88,6 +89,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView >
+            
         </StackLayout>
     </ScrollView>
 
