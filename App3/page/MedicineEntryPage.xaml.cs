@@ -34,9 +34,6 @@ namespace NavPageSample
             SQLiteConnection con = new SQLiteConnection("Data Source=R03TEAM04.db;Version=3;");
             //接続を開く
             con.Open();
-
-            if (!string.IsNullOrWhiteSpace(Medicine_Name_Entry.Text))
-            {
                 await App.Database.SaveMedicineAsync(new Medicine
                 {
                     Medicine_name = Medicine_Name_Entry.Text,
@@ -44,10 +41,20 @@ namespace NavPageSample
                     timing = Timing_Entry.Text,
                 });
 
-                await App.Database.SaveUserAsync(new User
-                {
-                    Jikantai = Jikantai_Entry.Text
-                });
+            // データSELECT（）
+            string sqlstr = "select Jikantai from User";
+
+            SQLiteCommand com = new SQLiteCommand(sqlstr, con);
+            string result = com.ExecuteReader().ToString();
+
+
+            if (Timing_Entry.ToString() =="食前")
+            {
+                //食前なら、Userテーブルの朝飯、昼の時間から30分引く
+            }
+            else //食後
+            {
+                //食後なら＋３０分
             }
 
 
